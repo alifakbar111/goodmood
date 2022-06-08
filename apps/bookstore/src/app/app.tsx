@@ -1,5 +1,5 @@
 import { BooksFeature } from '@goodmood/books/feature';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, Navigate  } from 'react-router-dom';
 
 import {
   GlobalStyles,
@@ -23,9 +23,9 @@ export function App() {
       </Header>
       <Main>
         <Routes>
-          <Route path="/feature" element={<BooksFeature />} />
+          <Route path="/books" element={<BooksFeature />} />
+          <Route path="/" element={<Navigate to="/books" />} />
         </Routes>
-        <h1>Welcome to BooksFeature</h1>
       </Main>
     </>
   );
