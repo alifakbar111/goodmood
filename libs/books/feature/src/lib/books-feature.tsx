@@ -1,17 +1,21 @@
-import styled from 'styled-components';
+import { useEffect, useState } from 'react';
+import { getBooks } from '@goodmood/books/data-access';
+import { Books } from '@goodmood/books/ui';
 
 /* eslint-disable-next-line */
 export interface BooksFeatureProps {}
 
-const StyledBooksFeature = styled.div`
-  color: pink;
-`;
-
 export function BooksFeature(props: BooksFeatureProps) {
+  const [books, setBooks] = useState<unknown[]>([]);
+
+  useEffect(() => {
+    getBooks().then(setBooks);
+  }, []);
   return (
-    <StyledBooksFeature>
-      <h1>Welcome to BooksFeature!</h1>
-    </StyledBooksFeature>
+    <>
+      <h2>Books</h2>
+      <Books books={books} />
+    </>
   );
 }
 

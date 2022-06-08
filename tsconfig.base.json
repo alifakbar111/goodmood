@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@goodmood/books/data-access": ["libs/books/data-access/src/index.ts"],
       "@goodmood/books/feature": ["libs/books/feature/src/index.ts"],
+      "@goodmood/books/ui": ["libs/books/ui/src/index.ts"],
       "@goodmood/ui": ["libs/ui/src/index.ts"]
     }
   },
