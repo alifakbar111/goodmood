@@ -1,15 +1,33 @@
-import styled from 'styled-components';
-import NxWelcome from './nx-welcome';
+import { BooksFeature } from '@goodmood/books/feature';
+import { Link, Routes, Route } from 'react-router-dom';
 
-const StyledApp = styled.div`
-  // Your style here
-`;
+import {
+  GlobalStyles,
+  Header,
+  Main,
+  NavigationItem,
+  NavigationList,
+} from '@goodmood/ui';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="bookstore" />
-    </StyledApp>
+    <>
+      <GlobalStyles />
+      <Header>
+        <h1>Bookstore</h1>
+        <NavigationList>
+          <NavigationItem>
+            <Link to="/books">Books</Link>
+          </NavigationItem>
+        </NavigationList>
+      </Header>
+      <Main>
+        <Routes>
+          <Route path="/feature" element={<BooksFeature />} />
+        </Routes>
+        <h1>Welcome to BooksFeature</h1>
+      </Main>
+    </>
   );
 }
 
