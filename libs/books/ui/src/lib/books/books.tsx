@@ -4,6 +4,7 @@ import Book from '../book/book';
 /* eslint-disable-next-line */
 export interface BooksProps {
   books: any[];
+  onAdd : (book: any) => void
 }
 
 const StyledBooks = styled.div`
@@ -11,11 +12,11 @@ const StyledBooks = styled.div`
   border-radius: 4px;
 `;
 
-export function Books({ books }: BooksProps) {
+export function Books({ books, onAdd }: BooksProps) {
   return (
     <StyledBooks>
       {books.map((book) => (
-        <Book key={book.id} book={book} />
+        <Book key={book.id} book={book} onAdd={onAdd} />
       ))}
     </StyledBooks>
   );
